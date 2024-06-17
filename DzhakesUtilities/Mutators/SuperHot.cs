@@ -3,7 +3,7 @@ using BepInEx.Logging;
 using RogueLibsCore;
 using UnityEngine;
 
-namespace DzhakesUtilities.Mutators
+namespace DzhakesUtilities
 {
     public class SuperHot : MutatorUnlock
     {
@@ -20,7 +20,7 @@ namespace DzhakesUtilities.Mutators
         {
             SuperHot mutator = new SuperHot();
             RogueLibs.CreateCustomUnlock(mutator)
-                .WithName(new CustomNameInfo("Super Hot"))
+                .WithName(new CustomNameInfo("[DU] Super Hot"))
                 .WithDescription(new CustomNameInfo("Time only moves when you move"));
 
             RoguePatcher patcher = new RoguePatcher(Core.Instance) { TypeWithPatches = typeof(SuperHot) };
@@ -33,7 +33,11 @@ namespace DzhakesUtilities.Mutators
 
         public void LateUpdate()
         {
-            if (!(gc?.challenges?.Contains(Name) ?? false)) return;
+            if (!(gc?.challenges?.Contains(Name) ?? false))
+            {
+                gc.secondaryTimeScale = 1f / 60f;
+                return;
+            }
 
             Agent player = gc.playerAgent;
             int num = player.isPlayer - 1;
@@ -42,7 +46,7 @@ namespace DzhakesUtilities.Mutators
             bool playerMoving = pc.heldLeftK[num] || pc.heldRightK[num] || pc.heldDownK[num] || pc.heldUpK[num];
             bool playerBusy = player.melee.attackAnimPlaying || pc.cantPressButtons;
 
-            gc.secondaryTimeScale = !playerCanMove || player.dead || playerMoving || playerBusy ? -1 : 1f / 60f;
+            gc.secondaryTimeScale = !playerCanMove || player.dead || playerMoving || playerBusy ? 0f : 1f / 60f;
             gc.SetTimeScale();
         }
 

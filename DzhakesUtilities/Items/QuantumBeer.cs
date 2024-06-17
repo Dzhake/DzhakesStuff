@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RogueLibsCore;
+﻿using RogueLibsCore;
 using UnityEngine;
 
-namespace DzhakesUtilities.Items
+namespace DzhakesUtilities
 {
     [ItemCategories(RogueCategories.Food, RogueCategories.Technology)]
     public class QuantumBeer : CustomItem, IItemUsable, IDoUpdate
