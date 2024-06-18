@@ -1,6 +1,7 @@
 ﻿using RogueLibsCore;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 namespace DzhakesUtilities
@@ -10,19 +11,20 @@ namespace DzhakesUtilities
         private static readonly Dictionary<Agent, int> coroutineIds = new();
         private static readonly Dictionary<Agent, Coroutine> coroutines = new();
         private static readonly Dictionary<Agent, float> blinkTimes = new();
+        const float blinkDuration = 0.1f;
 
-        public Blinking() : base(nameof(Blinking))
-        {
-            UnlockCost = 3;
-        }
+        public static Blinking Instance;
+
+        public Blinking() : base(nameof(Blinking)) { UnlockCost = 3; }
 
         [RLSetup]
         public static void Setup()
         {
             Blinking mutator = new Blinking();
             RogueLibs.CreateCustomUnlock(mutator)
-                .WithName(new CustomNameInfo("[DU] Blinking"))
+                .WithName(new CustomNameInfo("[DS] Blinking"))
                 .WithDescription(new CustomNameInfo("Makes everyone blink"));
+            Instance = mutator;
 
             RoguePatcher patcher = new RoguePatcher(Core.Instance) { TypeWithPatches = typeof(Blinking) };
             patcher.Postfix(typeof(Agent), "Start");
@@ -30,6 +32,7 @@ namespace DzhakesUtilities
 
         public static void Agent_Start(Agent __instance)
         {
+            if (!Instance.IsEnabled) return;
             if (coroutines.TryGetValue(__instance, out Coroutine? coroutine))
             {
                 coroutineIds[__instance]++;
@@ -41,7 +44,6 @@ namespace DzhakesUtilities
         }
         private static IEnumerator BlinkingCoroutine(int id, Agent agent)
         {
-            const float blinkDuration = 0.1f;
             while (coroutineIds[agent] == id)
             {
                 float nextBlink = blinkTimes[agent];
@@ -55,7 +57,7 @@ namespace DzhakesUtilities
                         yield return null;
                     }
                     agent.agentHitboxScript?.MustRefresh();
-                    blinkTimes[agent] = Time.time + Random.Range(2f, 5f);
+                    blinkTimes[agent] = Time.time + Random.Range(0.2f, 0.5f);
                 }
                 yield return null;
             }

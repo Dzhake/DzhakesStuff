@@ -11,8 +11,8 @@ namespace DzhakesUtilities
         {
             RogueLibs.CreateCustomItem<QuantumBeer>()
                 .WithName(new CustomNameInfo("Quantum Beer"))
-                .WithDescription(new CustomNameInfo("Created with quntum mechanics, it persists after being eaten."))
-                .WithSprite(Properties.Resources.QuantumBeer)
+                .WithDescription(new CustomNameInfo("Created with quantum mechanics, it persists after being eaten."))
+                //.WithSprite(Properties.Resources.QuantumBeer)
                 .WithUnlock(new ItemUnlock
                 {
                     LoadoutCost = 15,

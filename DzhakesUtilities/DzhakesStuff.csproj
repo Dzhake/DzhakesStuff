@@ -5,7 +5,7 @@
     <!-- Project Properties -->
 
     <!-- Header -->
-    <AssemblyName>DzhakesUtilities</AssemblyName>
+    <AssemblyName>DzhakesStuff</AssemblyName>
     <PackageId>$(AssemblyName)</PackageId>
     <Version>1.0.0</Version>
     <Authors>Dzhake</Authors>
@@ -22,8 +22,12 @@
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command='"$(SolutionDir)\..\.events\PluginBuildEvents.exe" "$(TargetPath)" "N:\Games\Streets of Rogue"' />
+    <Exec Command="&quot;$(SolutionDir)\..\.events\PluginBuildEvents.exe&quot; &quot;$(TargetPath)&quot; &quot;N:\Games\Streets of Rogue&quot;" />
   </Target>
+
+  <ItemGroup>
+    <Compile Remove="Mutators\BetterMenusSlowMotion.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Assembly-CSharp">

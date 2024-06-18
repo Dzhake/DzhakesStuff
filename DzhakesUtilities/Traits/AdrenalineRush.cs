@@ -17,7 +17,7 @@ namespace DzhakesUtilities
         public static void Setup()
         {
             RogueLibs.CreateCustomTrait<AdrenalineRush>()
-                .WithName(new CustomNameInfo("[DU] Adrenaline Rush"))
+                .WithName(new CustomNameInfo("[DS] Adrenaline Rush"))
                 .WithDescription(new CustomNameInfo("Get huge boost for 5 seconds after killing someone"))
                 .WithUnlock(new TraitUnlock { UnlockCost = 5, CharacterCreationCost = 3 });
 
@@ -27,13 +27,12 @@ namespace DzhakesUtilities
 
         public static void StatusEffects_SetupDeath(StatusEffects __instance)
         {
-            Agent? killer = __instance.agent?.killedByAgent;
-            Core.Logger.LogWarning("Somone died!");
+            Agent? killer = __instance.agent?.justHitByAgent2;
+
             if (killer == null) return;
-            Core.Logger.LogWarning("And he was killed!");
+
             if (killer.HasTrait<AdrenalineRush>())
             {
-                Core.Logger.LogWarning("And killer should get adrenaline!");
                 killer.AddEffect<Adrenaline>();
             }
         }

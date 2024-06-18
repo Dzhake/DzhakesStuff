@@ -8,11 +8,11 @@ namespace DzhakesUtilities
     public class SuperHot : MutatorUnlock
     {
         public static SuperHot? Instance;
+        public static bool WasEnabled;
 
         public SuperHot() : base(nameof(SuperHot))
         {
             UnlockCost = 3;
-            
         }
 
         [RLSetup]
@@ -20,12 +20,14 @@ namespace DzhakesUtilities
         {
             SuperHot mutator = new SuperHot();
             RogueLibs.CreateCustomUnlock(mutator)
-                .WithName(new CustomNameInfo("[DU] Super Hot"))
+                .WithName(new CustomNameInfo("[DS] Super Hot"))
                 .WithDescription(new CustomNameInfo("Time only moves when you move"));
 
             RoguePatcher patcher = new RoguePatcher(Core.Instance) { TypeWithPatches = typeof(SuperHot) };
             patcher.Postfix(typeof(GameController), nameof(GameController.SetTimeScale));
             Instance = mutator;
+
+            Core.LateUpdatables.Add(() => Instance.LateUpdate());
         }
 
         public static void GameController_SetTimeScale(GameController __instance)
@@ -33,9 +35,10 @@ namespace DzhakesUtilities
 
         public void LateUpdate()
         {
-            if (!(gc?.challenges?.Contains(Name) ?? false))
+            if (!this.IsEnabled())
             {
-                gc.secondaryTimeScale = 1f / 60f;
+                if (gc != null && WasEnabled)
+                    gc.secondaryTimeScale = -1f;
                 return;
             }
 
@@ -46,8 +49,9 @@ namespace DzhakesUtilities
             bool playerMoving = pc.heldLeftK[num] || pc.heldRightK[num] || pc.heldDownK[num] || pc.heldUpK[num];
             bool playerBusy = player.melee.attackAnimPlaying || pc.cantPressButtons;
 
-            gc.secondaryTimeScale = !playerCanMove || player.dead || playerMoving || playerBusy ? 0f : 1f / 60f;
+            gc.secondaryTimeScale = !playerCanMove || player.dead || playerMoving || playerBusy ? -1f : 1f / 1000f;
             gc.SetTimeScale();
+            WasEnabled = true;
         }
 
     }
