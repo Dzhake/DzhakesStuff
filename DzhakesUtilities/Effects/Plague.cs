@@ -2,9 +2,9 @@
 using RogueLibsCore;
 using UnityEngine;
 
-namespace DzhakesUtilities
+namespace DzhakesStuff
 {
-    [EffectParameters(EffectLimitations.RemoveOnDeath | EffectLimitations.RemoveOnKnockOut)]
+    [EffectParameters(EffectLimitations.None)]
     public class Plague : CustomEffect
     {
         [RLSetup]
@@ -22,12 +22,14 @@ namespace DzhakesUtilities
         public override void OnUpdated(EffectUpdatedArgs e)
         {
             e.UpdateDelay = 1f;
-            Owner.ChangeHealth(-3f);
+            if (!Owner.dead)
+                Owner.ChangeHealth(-3f);
+
             Vector2 ownerPos = Owner.curPosition;
 
             foreach (Agent agent in gc.agentList)
             {
-                if (Vector2.Distance(agent.curPosition,ownerPos) < 5f * 0.64f && agent.movement.HasLOSPosition360(ownerPos))
+                if (Vector2.Distance(agent.curPosition,ownerPos) < 5f * 0.64f && agent.movement.HasLOSPosition360(ownerPos) && (PlagueEverywhere.Timer <= 0 || agent.isPlayer != 0))
                 {
                     agent.AddEffect<Plague>();
                 }

@@ -3,7 +3,7 @@ using BepInEx.Logging;
 using RogueLibsCore;
 using UnityEngine;
 
-namespace DzhakesUtilities
+namespace DzhakesStuff
 {
     public class SuperHot : MutatorUnlock
     {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 
-namespace DzhakesUtilities
+namespace DzhakesStuff
 {
     public class Blinking : MutatorUnlock
     {

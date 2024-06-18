@@ -5,7 +5,7 @@ using BepInEx.Logging;
 using RogueLibsCore;
 using UnityEngine;
 
-namespace DzhakesUtilities
+namespace DzhakesStuff
 {
     [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
     [BepInDependency(RogueLibs.GUID, RogueLibs.CompiledVersion)]
@@ -13,7 +13,7 @@ namespace DzhakesUtilities
     {
         public static Core Instance = new();
 
-        public const string PluginGuid = "dzhake.streetsofrogue.dzhakesutilities";
+        public const string PluginGuid = "dzhake.streetsofrogue.DzhakesStuff";
         public const string PluginName = "Dzhakes Utilities";
         public const string PluginVersion = "1.0.0";
 

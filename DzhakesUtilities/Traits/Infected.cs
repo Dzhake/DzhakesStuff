@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using RogueLibsCore;
 using UnityEngine;
 
-namespace DzhakesUtilities
+namespace DzhakesStuff
 {
     public class Infected : CustomTrait, ITraitUpdateable
     {

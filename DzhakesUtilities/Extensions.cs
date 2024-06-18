@@ -1,7 +1,7 @@
 ﻿using RogueLibsCore;
 using UnityEngine;
 
-namespace DzhakesUtilities
+namespace DzhakesStuff
 {
     public static class Extensions
     {

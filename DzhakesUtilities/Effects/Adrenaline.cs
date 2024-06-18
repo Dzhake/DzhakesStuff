@@ -1,6 +1,6 @@
 ﻿using RogueLibsCore;
 
-namespace DzhakesUtilities
+namespace DzhakesStuff
 {
     [EffectParameters(EffectLimitations.RemoveOnDeath | EffectLimitations.RemoveOnKnockOut)]
     public class Adrenaline : CustomEffect

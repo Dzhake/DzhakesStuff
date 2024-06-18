@@ -2,19 +2,19 @@
 using RogueLibsCore;
 using UnityEngine;
 
-namespace DzhakesUtilities
+namespace DzhakesStuff
 {
     public class PlagueEverywhere : CustomDisaster
     {
         public static int Timer; // Imagine someone with plague spawns near you. Not cool.
-        public static PlagueEverywhere Instance;
+        public static PlagueEverywhere? Instance;
 
         [RLSetup]
         public static void Setup()
         {
             RogueLibs.CreateCustomDisaster<PlagueEverywhere>()
                 .WithName(new CustomNameInfo("Plague Everywhere"))
-                .WithDescription(new CustomNameInfo("Some people are infected! Try to not get infection, or the rest of game may be hard!"))
+                .WithDescription(new CustomNameInfo("Some people are infected!"))
                 .WithMessage(new CustomNameInfo("Plague Everywhere!"))
                 .WithMessage(new CustomNameInfo("Some people are infected!!"));
         }
@@ -22,11 +22,6 @@ namespace DzhakesUtilities
         public override bool Test()
         {
             return EnablePlagueEverywhere.Instance?.IsEnabled ?? false;
-        }
-
-        public override bool TestForced()
-        {
-            return true;
         }
 
         public override void Start()
