@@ -12,6 +12,7 @@ namespace DzhakesStuff
             patcher.Prefix(typeof(AnalyticsFunctions),nameof(AnalyticsFunctions.SendData));
             patcher.Prefix(typeof(LoadLevel), nameof(LoadLevel.HomeBaseAgentSpawns));
             patcher.Postfix(typeof(LoadLevel), "SetupMore5_2");
+            patcher.Postfix(typeof(CameraScript), nameof(CameraScript.RealStart));
         }
 
         //Don't send my data
@@ -46,6 +47,12 @@ namespace DzhakesStuff
         public static void LoadLevel_SetupMore5_2()
         {
             ChronomanticDilation.baseTimeScale = GameController.gameController.selectedTimeScale;
+        }
+
+        public static void CameraScript_RealStart(CameraScript __instance)
+        {
+            GameObject go = __instance.GetComponentInChildren<Camera>().gameObject;
+            if (!go.TryGetComponent<BlackWhite>(out _)) go.AddComponent<BlackWhite>();
         }
     }
 }

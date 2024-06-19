@@ -142,4 +142,7 @@
   <data name="TelemanticBlink" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TelemanticBlink.png;System.Byte[], mscorlib</value>
   </data>
+  <data name="ShadersBundle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shaders.assets;System.Byte[], mscorlib</value>
+  </data>
 </root>

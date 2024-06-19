@@ -1,8 +1,8 @@
-﻿using BepInEx.Logging;
-using RogueLibsCore;
-using System;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
+using BepInEx.Logging;
+using RogueLibsCore;
+using UnityEngine;
 
 namespace DzhakesStuff
 {
@@ -11,6 +11,9 @@ namespace DzhakesStuff
 		public static float baseTimeScale = 1f;
 
         private Agent agent => Item.agent;
+
+        public static bool Casting;
+        public static float Density = 0f;
 
 		[RLSetup]
 		public static void Setup()
@@ -28,18 +31,13 @@ namespace DzhakesStuff
                 });
 
 		}
-		public override void OnAdded()
-		{
-		}
+		public override void OnAdded() {}
 		public override void OnPressed()
 		{
-			if (IsWindingUp())
-                gc.audioHandler.Play(Item.agent, "CantDo");
-			else if (IsCast())
-				StartDecast();
-			else
-				StartCast(2f);
+			if (Count <= 0)
+				agent.StartCoroutine(Cast(2f));
 		}
+
 		public override void SetupDetails()
 		{
 			Item.cantDrop = true;
@@ -50,90 +48,63 @@ namespace DzhakesStuff
 			Item.otherDamage = 0; // Bitwise variable field, see Extension method class below
 			Item.isWeapon = false;
 			Item.initCount = 0;
-			Item.stackable = false;
-			Item.thiefCantSteal = false;
-		}
+			Item.stackable = true;
+            Item.thiefCantSteal = false;
+            Item.itemType = "";
+        }
+
 		public void OnRecharging(AbilityRechargingArgs e)
 		{
 			e.UpdateDelay = 1f;
-            e.ShowRechargedText = true;
             Count--;
         }
-		public bool IsCast()
-		{
-			try
-			{
-				return (agent.inventory.equippedSpecialAbility.otherDamage & 0b_0001) != 0;
-			}
-			catch
-			{
-				return false;
-			}
-		}
 
-		public bool IsWindingUp() =>
-			(Item.agent.inventory.equippedSpecialAbility.otherDamage & 0b_0100) != 0;
+		public IEnumerator Cast(float speedupfactor)
+        {
+            if (Casting) yield break;
 
-		public void SetCast(bool value)
-		{
-			if (value) agent.inventory.equippedSpecialAbility.otherDamage |= 0b_0001;
-			else agent.inventory.equippedSpecialAbility.otherDamage &= ~0b_0001;
-		}
-
-		public void SetWindingUp(bool value)
-		{
-			if (value) agent.inventory.equippedSpecialAbility.otherDamage |= 0b_0100;
-			else agent.inventory.equippedSpecialAbility.otherDamage &= ~0b_0100;
-		}
-
-		public void DialogueCast()
-		{
-			agent.SpawnParticleEffect("ExplosionMindControl", agent.curPosition);
-			gc.audioHandler.Play(agent, "MakeOffering");
-		}
-
-		public void StartCast(float speedupfactor)
-		{
-			SetCast(true);
-			DialogueCast();
+            Casting = true;
+            gc.audioHandler.Play(agent, "MakeOffering");
 
 			gc.selectedTimeScale = baseTimeScale / speedupfactor;
 			gc.mainTimeScale = baseTimeScale / speedupfactor;
 			agent.speedMax = agent.FindSpeed() * (int)speedupfactor;
 
             Count = 15;
+
+            agent.StartCoroutine(LerpDensity(1f, 1f));
+
+            yield return new WaitForSeconds(5f);
+
+			Decast();
         }
 
-		public async void StartDecast()
-		{
+		public void Decast()
+        {
+            if (!Casting) return;
 			agent.speedMax = agent.FindSpeed();
-
-			SetCast(false); // Needs to occur before delays or Overcast occurs erroneously
 
 			gc.selectedTimeScale = baseTimeScale;
 			gc.mainTimeScale = baseTimeScale;
 
             gc.audioHandler.Play(agent, "MakeOffering");
 
-			await Task.Delay(1000);
+            agent.StartCoroutine(LerpDensity(0f,2f, true));
+        }
 
-			await StartWindingUp();
-		}
+        public IEnumerator LerpDensity(float to, float time, bool disable = false)
+        {
+            float t = 0f;
+            float from = Density;
+            while (t <= time)
+            {
+                t += Time.deltaTime;
+                Density = Mathf.Lerp(from, to, t / time);
+                yield return new WaitForEndOfFrame();
+            }
 
-		public void StartRecharge()
-		{
-			if (IsWindingUp())
-				SetWindingUp(false);
-
-		}
-
-		public async Task StartWindingUp()
-		{
-			SetWindingUp(true);
-
-			await Task.Delay(4000);
-
-			StartRecharge();
-		}
+            if (disable)
+                Casting = false;
+        }
 	}
 }
