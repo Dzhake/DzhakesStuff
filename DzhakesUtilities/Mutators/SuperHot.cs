@@ -7,7 +7,7 @@ namespace DzhakesStuff
 {
     public class SuperHot : MutatorUnlock
     {
-        public static SuperHot? Instance;
+        public new static SuperHot? Instance;
         public static bool WasEnabled;
 
         public SuperHot() : base(nameof(SuperHot))

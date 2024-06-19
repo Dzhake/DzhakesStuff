@@ -63,9 +63,79 @@ namespace DzhakesStuff.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] ChronomanticDilation {
+            get {
+                object obj = ResourceManager.GetObject("ChronomanticDilation", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] CryomanticBolt {
+            get {
+                object obj = ResourceManager.GetObject("CryomanticBolt", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ElectromanticDischarge {
+            get {
+                object obj = ResourceManager.GetObject("ElectromanticDischarge", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] MorphomanticGlamor {
+            get {
+                object obj = ResourceManager.GetObject("MorphomanticGlamor", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] MorphomanticGlamorActive {
+            get {
+                object obj = ResourceManager.GetObject("MorphomanticGlamorActive", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] PyromanticJet {
+            get {
+                object obj = ResourceManager.GetObject("PyromanticJet", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] QuantumBeer {
             get {
                 object obj = ResourceManager.GetObject("QuantumBeer", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] TelemanticBlink {
+            get {
+                object obj = ResourceManager.GetObject("TelemanticBlink", resourceCulture);
                 return ((byte[])(obj));
             }
         }

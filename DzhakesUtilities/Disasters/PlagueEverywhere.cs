@@ -21,7 +21,7 @@ namespace DzhakesStuff
 
         public override bool Test()
         {
-            return EnablePlagueEverywhere.Instance?.IsEnabled ?? false;
+            return !(DisablePlagueEverywhere.Instance?.IsEnabled ?? false);
         }
 
         public override void Start()
@@ -51,7 +51,7 @@ namespace DzhakesStuff
 
         public override IEnumerator? Updating()
         {
-            while (Instance.IsActive)
+            while (Instance!.IsActive)
             {
                 Timer--;
                 yield return 1f;
