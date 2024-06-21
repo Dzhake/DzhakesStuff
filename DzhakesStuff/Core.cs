@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using BepInEx;
 using BepInEx.Logging;
@@ -22,11 +23,21 @@ namespace DzhakesStuff
         public static List<Action> Updatables = new();
         public static List<Action> LateUpdatables = new();
 
+        public static AssetBundle? Shaders;
+
         public void Awake()
         {
             Instance = this;
             Logger = base.Logger;
             RogueLibs.LoadFromAssembly();
+            StartCoroutine(LoadBundles());
+        }
+
+        private static IEnumerator LoadBundles()
+        {
+            AssetBundleCreateRequest req = AssetBundle.LoadFromMemoryAsync(Properties.Resources.ShadersBundle);
+            yield return req;
+            Shaders = req.assetBundle;
         }
 
         public void Update()
@@ -39,6 +50,11 @@ namespace DzhakesStuff
         {
             foreach (Action action in LateUpdatables)
                 action();
+        }
+
+        public static void Log(object message)
+        {
+            Logger.LogWarning(message);
         }
     }
 }

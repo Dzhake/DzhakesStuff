@@ -53,6 +53,7 @@ namespace DzhakesStuff
         {
             GameObject go = __instance.GetComponentInChildren<Camera>().gameObject;
             if (!go.TryGetComponent<BlackWhite>(out _)) go.AddComponent<BlackWhite>();
+            if (!go.TryGetComponent<Noir>(out _)) go.AddComponent<Noir>();
         }
     }
 }
