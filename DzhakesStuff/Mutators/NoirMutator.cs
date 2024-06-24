@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using BepInEx.Logging;
-using RogueLibsCore;
-using UnityEngine;
+﻿using RogueLibsCore;
 
 namespace DzhakesStuff
 {

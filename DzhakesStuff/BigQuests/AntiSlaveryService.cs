@@ -47,7 +47,6 @@ namespace DzhakesStuff.BigQuests
                         gc.quests.bigQuestObjectList.Add(agent);
                     }
                     agent2.SpawnNewMapMarker();
-                    gc.quests.CreateQuestMarker(agent2, null, "QuestTarget");
                 }
             }
         }

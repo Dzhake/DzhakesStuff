@@ -36,6 +36,7 @@ namespace DzhakesStuff.Abilities
             Item.initCount = 0;
             Item.stackable = true;
             Item.thiefCantSteal = false;
+            Item.itemType = "Ability";
         }
 
 		public override void OnAdded() {}

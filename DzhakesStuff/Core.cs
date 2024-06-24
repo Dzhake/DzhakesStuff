@@ -56,5 +56,10 @@ namespace DzhakesStuff
         {
             Logger.LogWarning(message);
         }
+
+        public static RoguePatcher GetPatcher<T>()
+        {
+            return new RoguePatcher(Instance) { TypeWithPatches = typeof(T) };
+        }
     }
 }

@@ -93,6 +93,16 @@ namespace DzhakesStuff.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] MegaKey {
+            get {
+                object obj = ResourceManager.GetObject("MegaKey", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] MorphomanticGlamor {
             get {
                 object obj = ResourceManager.GetObject("MorphomanticGlamor", resourceCulture);
@@ -113,9 +123,9 @@ namespace DzhakesStuff.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] PyromanticJet {
+        internal static byte[] QuantumBeer {
             get {
-                object obj = ResourceManager.GetObject("PyromanticJet", resourceCulture);
+                object obj = ResourceManager.GetObject("QuantumBeer", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -123,9 +133,39 @@ namespace DzhakesStuff.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] QuantumBeer {
+        internal static byte[] SCP_262 {
             get {
-                object obj = ResourceManager.GetObject("QuantumBeer", resourceCulture);
+                object obj = ResourceManager.GetObject("SCP_262", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] SCP_485 {
+            get {
+                object obj = ResourceManager.GetObject("SCP_485", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] SCP_485_Click_1 {
+            get {
+                object obj = ResourceManager.GetObject("SCP_485_Click_1", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] SCP_485_Click_2 {
+            get {
+                object obj = ResourceManager.GetObject("SCP_485_Click_2", resourceCulture);
                 return ((byte[])(obj));
             }
         }

@@ -136,13 +136,25 @@
   <data name="MorphomanticGlamorActive" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MorphomanticGlamorActive.png;System.Byte[], mscorlib</value>
   </data>
-  <data name="PyromanticJet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PyromanticJet.png;System.Byte[], mscorlib</value>
-  </data>
   <data name="TelemanticBlink" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TelemanticBlink.png;System.Byte[], mscorlib</value>
   </data>
   <data name="ShadersBundle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Shaders.assets;System.Byte[], mscorlib</value>
+  </data>
+  <data name="SCP_262" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SCP_262.png;System.Byte[], mscorlib</value>
+  </data>
+  <data name="MegaKey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MegaKey.png;System.Byte[], mscorlib</value>
+  </data>
+  <data name="SCP_485" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SCP_485.png;System.Byte[], mscorlib</value>
+  </data>
+  <data name="SCP_485_Click_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SCP_485_Click_2.mp3;System.Byte[], mscorlib</value>
+  </data>
+  <data name="SCP_485_Click_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SCP_485_Click_2.mp3;System.Byte[], mscorlib</value>
   </data>
 </root>
