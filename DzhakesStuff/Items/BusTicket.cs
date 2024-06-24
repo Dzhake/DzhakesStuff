@@ -3,6 +3,7 @@ using RogueLibsCore;
 
 namespace DzhakesStuff.Items
 {
+    [ItemCategories(RogueCategories.Weird, RogueCategories.NonStandardWeapons, RogueCategories.Defense)]
     public class BusTicket : CustomItem, IItemTargetable
     {
         [RLSetup]
@@ -25,7 +26,6 @@ namespace DzhakesStuff.Items
         {
             Item.itemValue = 180;
             Item.cantBeCloned = true;
-            Item.goesInToolbar = true;
             Item.stackable = false;
             Item.itemType = ItemTypes.Tool;
             Item.rewardCount = 1;
@@ -44,8 +44,7 @@ namespace DzhakesStuff.Items
             Vector2 ownerPos = Owner!.curPosition;
             if (!(target is Agent agent) || agent == Owner || !(Vector2.Distance(target.curPosition, ownerPos) < 1.5f * 0.64f && agent.movement.HasLOSPosition360(ownerPos))) return false;
             agent!.SpawnParticleEffect("Spawn", agent.curPosition);
-            agent.dead = true;
-            agent.deathMethod = "Cyanide";
+            agent.statusEffects.SetupDeath(Owner, true);
             agent.Teleport(new (-999, -999), false, true);
             return true;
         }

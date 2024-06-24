@@ -160,4 +160,7 @@
   <data name="BusTicket" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BusTicket.png;System.Byte[], mscorlib</value>
   </data>
+  <data name="Pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pencil.png;System.Byte[], mscorlib</value>
+  </data>
 </root>

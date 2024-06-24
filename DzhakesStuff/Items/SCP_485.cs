@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 
 namespace DzhakesStuff
 {
+    [ItemCategories(RogueCategories.Weird, RogueCategories.NonStandardWeapons, RogueCategories.Technology)]
     public class SCP_485 : CustomItem, IItemUsable, IDoUpdate
     {
         [RLSetup]
