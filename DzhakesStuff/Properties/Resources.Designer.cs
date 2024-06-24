@@ -63,6 +63,16 @@ namespace DzhakesStuff.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] BusTicket {
+            get {
+                object obj = ResourceManager.GetObject("BusTicket", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] ChronomanticDilation {
             get {
                 object obj = ResourceManager.GetObject("ChronomanticDilation", resourceCulture);
@@ -93,16 +103,6 @@ namespace DzhakesStuff.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] MegaKey {
-            get {
-                object obj = ResourceManager.GetObject("MegaKey", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
         internal static byte[] MorphomanticGlamor {
             get {
                 object obj = ResourceManager.GetObject("MorphomanticGlamor", resourceCulture);
@@ -126,6 +126,16 @@ namespace DzhakesStuff.Properties {
         internal static byte[] QuantumBeer {
             get {
                 object obj = ResourceManager.GetObject("QuantumBeer", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] SCP_005 {
+            get {
+                object obj = ResourceManager.GetObject("SCP_005", resourceCulture);
                 return ((byte[])(obj));
             }
         }

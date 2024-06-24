@@ -18,13 +18,25 @@ namespace DzhakesStuff.BigQuests
         public void Update()
         {
             int cur = 0;
+            int total = 0;
 
             foreach (Agent agent2 in gc.agentList)
-            {if (agent2.hasFormerSlaveOwner)
+            {
+                if (agent2.hasFormerSlaveOwner)
                 {
                     cur++;
+                    total++;
                     agent2.noBigQuestMarker = true;
                 }
+                else if ((agent2.slaveOwners?.Count ?? 0) > 0 )
+                {
+                    total++;
+                }
+            }
+
+            if (total < Total)
+            {
+                Failed = true;
             }
 
             Current = cur;
@@ -59,6 +71,11 @@ namespace DzhakesStuff.BigQuests
             if (Current == Total)
             {
                 text = "<color=lime>Floor Clear!</color>";
+            }
+
+            if (Failed)
+            {
+                text = "<color=red>Failed!</color>";
             }
             return desc + text;
         }

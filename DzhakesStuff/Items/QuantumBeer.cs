@@ -10,8 +10,8 @@ namespace DzhakesStuff
         public static void Setup()
         {
             RogueLibs.CreateCustomItem<QuantumBeer>()
-                .WithName(new CustomNameInfo("Quantum Beer"))
-                .WithDescription(new CustomNameInfo("Created with quantum mechanics, it persists after being eaten."))
+                .WithName(new CustomNameInfo("[DS] Quantum Beer"))
+                .WithDescription(new CustomNameInfo("Created with quantum mechanics, it persists after being drunk."))
                 .WithSprite(Properties.Resources.QuantumBeer)
                 .WithUnlock(new ItemUnlock
                 {

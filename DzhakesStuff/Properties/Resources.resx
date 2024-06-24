@@ -145,8 +145,8 @@
   <data name="SCP_262" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SCP_262.png;System.Byte[], mscorlib</value>
   </data>
-  <data name="MegaKey" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MegaKey.png;System.Byte[], mscorlib</value>
+  <data name="SCP_005" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SCP_005.png;System.Byte[], mscorlib</value>
   </data>
   <data name="SCP_485" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SCP_485.png;System.Byte[], mscorlib</value>
@@ -156,5 +156,8 @@
   </data>
   <data name="SCP_485_Click_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SCP_485_Click_2.mp3;System.Byte[], mscorlib</value>
+  </data>
+  <data name="BusTicket" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BusTicket.png;System.Byte[], mscorlib</value>
   </data>
 </root>

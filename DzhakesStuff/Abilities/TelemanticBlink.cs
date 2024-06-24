@@ -36,7 +36,7 @@ namespace DzhakesStuff.Abilities
             Item.initCount = 0;
             Item.stackable = true;
             Item.thiefCantSteal = false;
-            Item.itemType = "Ability";
+            Item.itemType = ItemTypes.Tool;
         }
 
 		public override void OnAdded() {}
@@ -59,11 +59,11 @@ namespace DzhakesStuff.Abilities
         {
             if (Count > 0) return;
 
-			StartCast(Math.Max(5, actualHeldTime));
+			StartCast();
             actualHeldTime = 0f;
         }
 		
-        public void StartCast(float charge)
+        public void StartCast()
         {
             Vector2 targetPosition = Util.MouseIngamePosition();
             TileInfo tileInfo = gc.tileInfo;

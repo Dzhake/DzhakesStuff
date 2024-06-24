@@ -17,7 +17,7 @@ namespace DzhakesStuff
             RogueLibs.CreateCustomItem<SCP_262>()
                      .WithName(new CustomNameInfo
                      {
-                         English = "SCP-262",
+                         English = "[DS] SCP-262",
                      })
                      .WithDescription(new CustomNameInfo
                      {

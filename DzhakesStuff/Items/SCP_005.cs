@@ -5,18 +5,18 @@ namespace DzhakesStuff
 {
     //SCP_005 by abbysssal
     [ItemCategories(RogueCategories.NonUsableTool, RogueCategories.Stealth)]
-    public class MegaKey : CustomItem
+    public class SCP_005 : CustomItem
     {
         [RLSetup]
         public static void Setup()
         {
-            RogueLibs.CreateCustomItem<MegaKey>()
-                     .WithName(new CustomNameInfo("[DS] Mega Key"))
+            RogueLibs.CreateCustomItem<SCP_005>()
+                     .WithName(new CustomNameInfo("[DS] SCP-005"))
                      .WithDescription(new CustomNameInfo
                      {
                          English = "A key that can unlock any recognizable locking mechanism, be it mechanical, digital, fictional or meta-existential.",
                      })
-                     .WithSprite(Properties.Resources.MegaKey, new Rect(0f, 0f, 64f, 64f))
+                     .WithSprite(Properties.Resources.SCP_005, new Rect(0f, 0f, 64f, 64f))
                      .WithUnlock(new ItemUnlock(false)
                      {
                          UnlockCost = 5,
@@ -24,20 +24,20 @@ namespace DzhakesStuff
                          LoadoutCost = 5,
                      });
 
-            RogueLibs.CreateCustomName("UseMegaKey", NameTypes.Interface, new CustomNameInfo
+            RogueLibs.CreateCustomName("UseSCP_005", NameTypes.Interface, new CustomNameInfo
             {
-                English = "Use Mega Key",
+                English = "Use SCP-005",
             });
 
             RogueInteractions.CreateProvider<Door>(static h =>
             {
                 if (h.Helper.interactingFar || h.Object.open) return;
 
-                if (h.Agent.inventory.HasItem<MegaKey>())
+                if (h.Agent.inventory.HasItem<SCP_005>())
                 {
                     if (h.Object.placedDetonatorInitial is 1 && !h.Agent.isHoisting)
                     {
-                        h.AddButton("UseMegaKey", static m =>
+                        h.AddButton("UseSCP_005", static m =>
                         {
                             m.Object.Disarm();
                             m.Agent.skillPoints.AddPoints("DisarmDetonatorPoints");
@@ -45,7 +45,7 @@ namespace DzhakesStuff
                     }
                     else if (h.Object.locked && !h.HasButton("UseKey"))
                     {
-                        h.AddButton("UseMegaKey", static m =>
+                        h.AddButton("UseSCP_005", static m =>
                         {
                             m.Object.Unlock();
                             m.Object.OpenDoor(m.Agent);
@@ -58,9 +58,9 @@ namespace DzhakesStuff
             {
                 if (h.Helper.interactingFar || h.Object.hacked) return;
 
-                if (h.Agent.inventory.HasItem<MegaKey>())
+                if (h.Agent.inventory.HasItem<SCP_005>())
                 {
-                    h.AddButton("UseMegaKey", static m =>
+                    h.AddButton("UseSCP_005", static m =>
                     {
                         m.Object.hacked = true;
                         if (!m.gc.serverPlayer) m.gc.playerAgent.objectMult.ObjectAction(m.Object.objectNetID, "AllAccess");
@@ -72,12 +72,12 @@ namespace DzhakesStuff
             {
                 if (h.Helper.interactingFar) return;
 
-                if (h.Agent.inventory.HasItem<MegaKey>())
+                if (h.Agent.inventory.HasItem<SCP_005>())
                 {
                     if (h.Object.agentName is "Slave" && !h.Object.slaveOwners.Contains(h.Agent) && h.Object.slaveOwners.Count > 0
                         && h.Object.inventory.equippedArmorHead.invItemName == "SlaveHelmet")
                     {
-                        h.AddButton("UseMegaKey", static m => m.Object.agentInteractions.RemoveSlaveHelmetHack(m.Object, m.Agent));
+                        h.AddButton("UseSCP_005", static m => m.Object.agentInteractions.RemoveSlaveHelmetHack(m.Object, m.Agent));
                     }
                     else if (h.Object.mechEmpty && !h.Agent.transforming)
                     {
@@ -108,9 +108,9 @@ namespace DzhakesStuff
             {
                 if (h.Helper.interactingFar || !h.Object.locked) return;
 
-                if (h.Agent.inventory.HasItem<MegaKey>() && !h.HasButton("UseSafeCombination"))
+                if (h.Agent.inventory.HasItem<SCP_005>() && !h.HasButton("UseSafeCombination"))
                 {
-                    h.AddButton("UseMegaKey", static m =>
+                    h.AddButton("UseSCP_005", static m =>
                     {
                         m.Object.UnlockSafe();
                         m.Object.ShowChest();
@@ -123,9 +123,9 @@ namespace DzhakesStuff
             {
                 if (h.Helper.interactingFar || h.Object.opened) return;
 
-                if (h.Agent.inventory.HasItem<MegaKey>())
+                if (h.Agent.inventory.HasItem<SCP_005>())
                 {
-                    h.AddImplicitButton("UseMegaKey", static m =>
+                    h.AddImplicitButton("UseSCP_005", static m =>
                     {
                         m.Object.OpenTrapDoor(false, false, true);
                         m.StopInteraction();
@@ -137,7 +137,7 @@ namespace DzhakesStuff
             {
                 if (h.Helper.interactingFar || h.Object.state > 0) return;
 
-                h.AddButton("UseMegaKey", static m =>
+                h.AddButton("UseSCP_005", static m =>
                 {
                     m.Object.lastHitByAgent = m.Agent;
                     m.Object.direction = m.Object.FindSprayDir(m.Agent);
