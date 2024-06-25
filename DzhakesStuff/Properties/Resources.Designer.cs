@@ -103,6 +103,16 @@ namespace DzhakesStuff.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] Glasses {
+            get {
+                object obj = ResourceManager.GetObject("Glasses", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] MorphomanticGlamor {
             get {
                 object obj = ResourceManager.GetObject("MorphomanticGlamor", resourceCulture);

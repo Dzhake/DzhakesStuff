@@ -24,7 +24,7 @@ namespace DzhakesStuff
 				.WithSprite(Properties.Resources.ChronomanticDilation)
 				.WithUnlock(new AbilityUnlock
 				{
-					CharacterCreationCost = 10,
+					CharacterCreationCost = 7,
 					IsAvailable = true,
 					IsAvailableInCC = true,
 					UnlockCost = 10,

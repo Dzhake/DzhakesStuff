@@ -19,7 +19,7 @@ namespace DzhakesStuff.Abilities
 				.WithSprite(Properties.Resources.TelemanticBlink)
 				.WithUnlock(new AbilityUnlock
 				{
-					CharacterCreationCost = 17,
+					CharacterCreationCost = 13,
 					IsAvailable = true,
 					IsAvailableInCC = true,
 					UnlockCost = 17,

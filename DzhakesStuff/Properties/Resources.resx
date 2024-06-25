@@ -163,4 +163,7 @@
   <data name="Pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pencil.png;System.Byte[], mscorlib</value>
   </data>
+  <data name="Glasses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Glasses.png;System.Byte[], mscorlib</value>
+  </data>
 </root>

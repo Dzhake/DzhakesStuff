@@ -12,6 +12,14 @@
     <Company>$(Authors)</Company>
     <Copyright></Copyright>
 
+    <!-- Target .NET Framework 4.7.1 - latest suitable version -->
+    <TargetFramework>net471</TargetFramework>
+
+    <!-- Enable latest C# features -->
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+
     <!-- Title, Description, Tags -->
     <Title>$(AssemblyName)</Title>
 
