@@ -52,8 +52,12 @@ namespace DzhakesStuff
         public static void CameraScript_RealStart(CameraScript __instance)
         {
             GameObject go = __instance.GetComponentInChildren<Camera>().gameObject;
-            if (!go.TryGetComponent<BlackWhite>(out _)) go.AddComponent<BlackWhite>();
-            if (!go.TryGetComponent<Noir>(out _)) go.AddComponent<Noir>();
+            if (!go.TryGetComponent<BlackWhiteShader>(out _)) go.AddComponent<BlackWhiteShader>();
+            if (!go.TryGetComponent<NoirShader>(out _)) go.AddComponent<NoirShader>();
+            if (!go.TryGetComponent<BlurShader>(out _)) go.AddComponent<BlurShader>();
+            if (!go.TryGetComponent<D3Shader>(out _)) go.AddComponent<D3Shader>();
+            if (!go.TryGetComponent<TintShader>(out _)) go.AddComponent<TintShader>();
+            if (!go.TryGetComponent<DisplaceShader>(out _)) go.AddComponent<DisplaceShader>();
         }
     }
 }
