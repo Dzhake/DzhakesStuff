@@ -1,6 +1,6 @@
 ﻿using RogueLibsCore;
 
-namespace DzhakesStuff.BigQuests
+namespace DzhakesStuff
 {
     public class AntiSlaveryService : CustomBigQuest, IDoUpdate
     {

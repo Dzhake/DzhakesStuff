@@ -10,7 +10,7 @@ namespace DzhakesStuff.Items
         public static void Setup()
         {
             RogueLibs.CreateCustomItem<BusTicket>()
-                .WithName(new CustomNameInfo("[DS] Bus Ticker"))
+                .WithName(new CustomNameInfo("[DS] Bus Ticket"))
                 .WithDescription(new CustomNameInfo("[The Lost Room] When the Bus Ticket is touched to a person's skin, that person is transported to U.S. Route 66 outside Gallup, New Mexico the town where the Sunshine Motel is found. "))
                 .WithSprite(Properties.Resources.BusTicket)
                 .WithUnlock(new ItemUnlock

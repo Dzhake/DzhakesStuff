@@ -118,9 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <!-- Just some stuff -->
   <data name="QuantumBeer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\QuantumBeer.png;System.Byte[], mscorlib</value>
   </data>
+  <data name="ShadersBundle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shaders.assets;System.Byte[], mscorlib</value>
+  </data>
+  
+  <!-- Magic -->
   <data name="ChronomanticDilation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ChronomanticDilation.png;System.Byte[], mscorlib</value>
   </data>
@@ -139,9 +145,8 @@
   <data name="TelemanticBlink" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TelemanticBlink.png;System.Byte[], mscorlib</value>
   </data>
-  <data name="ShadersBundle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Shaders.assets;System.Byte[], mscorlib</value>
-  </data>
+  
+  <!-- SCP -->
   <data name="SCP_262" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SCP_262.png;System.Byte[], mscorlib</value>
   </data>
@@ -157,6 +162,8 @@
   <data name="SCP_485_Click_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SCP_485_Click_2.mp3;System.Byte[], mscorlib</value>
   </data>
+  
+  <!-- The Lost Room -->
   <data name="BusTicket" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BusTicket.png;System.Byte[], mscorlib</value>
   </data>
@@ -165,5 +172,8 @@
   </data>
   <data name="Glasses" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Glasses.png;System.Byte[], mscorlib</value>
+  </data>
+  <data name="DeckOfCards" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeckOfCards.png;System.Byte[], mscorlib</value>
   </data>
 </root>
