@@ -125,6 +125,9 @@
   <data name="ShadersBundle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Shaders.assets;System.Byte[], mscorlib</value>
   </data>
+  <data name="Backpack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backpack.png;System.Byte[], mscorlib</value>
+  </data>
   
   <!-- Magic -->
   <data name="ChronomanticDilation" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -175,5 +178,8 @@
   </data>
   <data name="DeckOfCards" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DeckOfCards.png;System.Byte[], mscorlib</value>
+  </data>
+  <data name="Pen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pen.png;System.Byte[], mscorlib</value>
   </data>
 </root>

@@ -17,6 +17,7 @@ namespace DzhakesStuff.Items
                 {
                     LoadoutCost = 5,
                     CharacterCreationCost = 5,
+                    UnlockCost = 5,
                     IsAvailable = true,
                     IsAvailableInCC = true
                 });

@@ -20,6 +20,7 @@ namespace DzhakesStuff.Items
                 .WithUnlock(new ItemUnlock
                 {
                     LoadoutCost = 5,
+                    UnlockCost = 5,
                     CharacterCreationCost = 5,
                     IsAvailable = true,
                     IsAvailableInCC = true
@@ -28,13 +29,17 @@ namespace DzhakesStuff.Items
 
         private float Cooldown;
 
-        public void Update() => Cooldown -= Time.deltaTime;
+        public void Update()
+        {
+            Cooldown -= Time.deltaTime;
+            Count = (int)Cooldown;
+        }
 
         public override void SetupDetails()
         {
             Item.itemValue = 180;
             Item.cantBeCloned = true;
-            Item.stackable = false;
+            Item.stackable = true;
             Item.itemType = ItemTypes.Tool;
             Item.rewardCount = 1;
         }

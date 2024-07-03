@@ -18,6 +18,7 @@ namespace DzhakesStuff.Items
                 .WithUnlock(new ItemUnlock
                 {
                     LoadoutCost = 5,
+                    UnlockCost = 5,
                     CharacterCreationCost = 5,
                     IsAvailable = true,
                     IsAvailableInCC = true
