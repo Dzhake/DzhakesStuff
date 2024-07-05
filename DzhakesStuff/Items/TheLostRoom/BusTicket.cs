@@ -42,8 +42,8 @@ namespace DzhakesStuff.Items
 
         public bool TargetObject(PlayfieldObject target)
         {
-            Vector2 ownerPos = Owner!.curPosition;
-            if (!(target is Agent agent) || agent == Owner || !(Vector2.Distance(target.curPosition, ownerPos) < 1.5f * 0.64f && agent.movement.HasLOSPosition360(ownerPos))) return false;
+            Agent? agent = target as Agent;
+            if (!TargetFilter(target) || agent is null) return false;
             agent!.SpawnParticleEffect("Spawn", agent.curPosition);
             agent.statusEffects.SetupDeath(Owner, true);
             agent.Teleport(new (-999, -999), false, true);

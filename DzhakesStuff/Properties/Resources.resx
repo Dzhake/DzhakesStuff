@@ -125,8 +125,8 @@
   <data name="ShadersBundle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Shaders.assets;System.Byte[], mscorlib</value>
   </data>
-  <data name="Backpack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Backpack.png;System.Byte[], mscorlib</value>
+  <data name="SuperRubberBulletsMod" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SuperRubberBulletsMod.png;System.Byte[], mscorlib</value>
   </data>
   
   <!-- Magic -->

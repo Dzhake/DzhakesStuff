@@ -63,16 +63,6 @@ namespace DzhakesStuff.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] Backpack {
-            get {
-                object obj = ResourceManager.GetObject("Backpack", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
         internal static byte[] BusTicket {
             get {
                 object obj = ResourceManager.GetObject("BusTicket", resourceCulture);
@@ -236,6 +226,16 @@ namespace DzhakesStuff.Properties {
         internal static byte[] ShadersBundle {
             get {
                 object obj = ResourceManager.GetObject("ShadersBundle", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] SuperRubberBulletsMod {
+            get {
+                object obj = ResourceManager.GetObject("SuperRubberBulletsMod", resourceCulture);
                 return ((byte[])(obj));
             }
         }
