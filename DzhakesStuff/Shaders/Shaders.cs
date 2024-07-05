@@ -14,13 +14,12 @@ namespace DzhakesStuff
 
     public class TintShader : CustomShader
     {
-        public static Color Color = Color.white;
-        public static Color UnColor = Color.black;
+        public static Color Color = Color.grey;
         protected override string Name => "Tint";
 
         public override bool Active()
         {
-            return Color != Color.grey || UnColor != Color.grey;
+            return Color != Color.grey;
         }
 
         protected override void SetValues(Material mat)
