@@ -5,6 +5,8 @@ namespace DzhakesStuff
 {
     public static class Patches
     {
+        private static GameController gc => GameController.gameController;
+
         [RLSetup]
         public static void Setup()
         {
@@ -27,6 +29,10 @@ namespace DzhakesStuff
 
             Demolish(64f, 54f); // Safe
             Demolish(84f, 66f); // Zombie
+
+            foreach (Agent agent in gc.agentList)
+                if (agent.isPlayer > 0)
+                    agent.SetSpeed(8);
         }
 
         private static void Demolish(float x, float y)

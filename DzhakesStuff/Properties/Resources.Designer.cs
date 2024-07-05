@@ -233,16 +233,6 @@ namespace DzhakesStuff.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] SuperRubberBulletsMod {
-            get {
-                object obj = ResourceManager.GetObject("SuperRubberBulletsMod", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
         internal static byte[] TelemanticBlink {
             get {
                 object obj = ResourceManager.GetObject("TelemanticBlink", resourceCulture);

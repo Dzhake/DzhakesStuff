@@ -15,14 +15,11 @@ namespace DzhakesStuff
             RogueLibs.CreateCustomDisaster<PlagueEverywhere>()
                 .WithName(new CustomNameInfo("Plague Everywhere"))
                 .WithDescription(new CustomNameInfo("Some people are infected!"))
-                .WithMessage(new CustomNameInfo("Plague Everywhere!"))
-                .WithMessage(new CustomNameInfo("Some people are infected!!"));
+                .WithMessage(new CustomNameInfo("Some people are infected!"))
+                .WithRemovalMutator(new("[DS] Remove \"Plague Everywhere\""));
         }
 
-        public override bool Test()
-        {
-            return !(DisablePlagueEverywhere.Instance?.IsEnabled ?? false);
-        }
+        public override bool TestForced() => true;
 
         public override void Start()
         {
@@ -30,7 +27,7 @@ namespace DzhakesStuff
             Instance = this;
             foreach (Agent agent in gc.agentList)
             {
-                if (Random.Range(0f, 1f) <= 0.4f)
+                if (Random.Range(0f, 1f) <= 0.4f && agent.isPlayer == 0)
                 {
                     agent.AddEffect<Plague>();
                 }

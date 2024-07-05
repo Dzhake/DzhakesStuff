@@ -125,9 +125,6 @@
   <data name="ShadersBundle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Shaders.assets;System.Byte[], mscorlib</value>
   </data>
-  <data name="SuperRubberBulletsMod" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SuperRubberBulletsMod.png;System.Byte[], mscorlib</value>
-  </data>
   
   <!-- Magic -->
   <data name="ChronomanticDilation" type="System.Resources.ResXFileRef, System.Windows.Forms">

@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using RogueLibsCore;
-using System.Diagnostics.Tracing;
-using System.Runtime.CompilerServices;
 
-namespace DzhakesStuff.Mutators
+namespace DzhakesStuff
 {
     public class AllKillerRobots : MutatorUnlock
     {
